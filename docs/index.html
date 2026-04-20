@@ -70,8 +70,10 @@
       margin-top: 32px;
     }
     .episode h2 { margin: 0 0 6px; font-size: 1.25rem; }
-    .episode .meta { color: #888; font-size: 0.9rem; margin: 0 0 12px; }
+    .episode .meta { color: #888; font-size: 0.9rem; margin: 0 0 8px; }
+    .episode .summary { color: #444; margin: 0 0 14px; font-size: 0.95rem; }
     audio { width: 100%; }
+    .loading { color: #999; text-align: center; padding: 40px 0; }
     footer { color: #888; font-size: 0.85rem; margin-top: 64px; }
     footer a { color: #4a3f2a; }
   </style>
@@ -79,8 +81,8 @@
 <body>
   <main>
     <div class="cover" role="img" aria-label="On Your Way cover"></div>
-    <h1>On Your Way · 听懂世界</h1>
-    <p class="tagline">这个播客是一个帮助你把文字变成声音，并且随身聆听定制化内容的地方。</p>
+    <h1 id="pcTitle">On Your Way · 听懂世界</h1>
+    <p class="tagline" id="pcTag">这个播客是一个帮助你把文字变成声音，并且随身聆听定制化内容的地方。</p>
 
     <div class="feed-box">
       <strong>订阅 RSS：</strong>
@@ -88,16 +90,47 @@
       <button onclick="navigator.clipboard.writeText(document.getElementById('feed').textContent)">复制链接</button>
     </div>
 
-    <section class="episode">
-      <h2>001 · 足球入门：听懂朋友聊球所需要的一切</h2>
-      <p class="meta">2026-04-20 · 28:43</p>
-      <audio controls preload="none"
-        src="https://github.com/SchaeferAnjon/private-podcast/releases/download/ep001/ep001_football.mp3"></audio>
-    </section>
+    <div id="episodes" class="loading">加载集数中…</div>
 
     <footer>
       <p>Made with Claude Code + MiniMax TTS. <a href="https://github.com/SchaeferAnjon/private-podcast">source on GitHub</a>.</p>
     </footer>
   </main>
+
+  <script>
+    function fmtDuration(sec) {
+      const m = Math.floor(sec / 60), s = String(sec % 60).padStart(2, '0');
+      return `${m}:${s}`;
+    }
+    function fmtDate(iso) {
+      return iso.slice(0, 10);
+    }
+    fetch('episodes.json', {cache: 'no-store'})
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById('pcTitle').textContent = data.podcast.title;
+        document.getElementById('pcTag').textContent = data.podcast.subtitle;
+        document.getElementById('feed').textContent = data.podcast.feed_url;
+
+        const container = document.getElementById('episodes');
+        container.classList.remove('loading');
+        container.innerHTML = '';
+
+        const sorted = [...data.episodes].sort((a, b) => b.num - a.num);
+        for (const ep of sorted) {
+          const node = document.createElement('section');
+          node.className = 'episode';
+          node.innerHTML = `
+            <h2>${String(ep.num).padStart(3, '0')} · ${ep.title}</h2>
+            <p class="meta">${fmtDate(ep.published_at)} · ${fmtDuration(ep.duration_sec)}</p>
+            ${ep.summary ? `<p class="summary">${ep.summary}</p>` : ''}
+            <audio controls preload="none" src="${ep.mp3_url}"></audio>`;
+          container.appendChild(node);
+        }
+      })
+      .catch(err => {
+        document.getElementById('episodes').textContent = '加载集数失败：' + err.message;
+      });
+  </script>
 </body>
 </html>

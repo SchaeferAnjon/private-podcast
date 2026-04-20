@@ -1,0 +1,42 @@
+{
+  "$schema_version": 1,
+  "podcast": {
+    "title": "On Your Way · 听懂世界",
+    "subtitle": "这个播客是一个帮助你把文字变成声音，并且随身聆听定制化内容的地方。",
+    "author": "Schaefer",
+    "email": "claudschaeferanjon@gmail.com",
+    "language": "zh-CN",
+    "category": "Education",
+    "explicit": false,
+    "feed_url": "https://schaeferanjon.github.io/private-podcast/podcast.xml",
+    "landing_url": "https://schaeferanjon.github.io/private-podcast/",
+    "cover_url": "https://schaeferanjon.github.io/private-podcast/cover.jpg",
+    "repo": "SchaeferAnjon/private-podcast"
+  },
+  "tts_default": {
+    "provider": "minimax",
+    "host": "https://api.minimax.chat",
+    "model": "speech-02-hd",
+    "voice": "male-qn-badao",
+    "speed": 1.0,
+    "sample_rate": 32000,
+    "bitrate": 128000,
+    "channels": 1
+  },
+  "episodes": [
+    {
+      "num": 1,
+      "tag": "ep001",
+      "title": "足球入门：听懂朋友聊球所需要的一切",
+      "summary": "28 分钟让你把足球世界的地基铺完：规则、历史、五大联赛、2026 世界杯、球星、术语、近期大事。",
+      "source": "足球入门_横纵分析报告.pdf（数字生命卡兹克 横纵分析法）",
+      "script_chars": 8002,
+      "duration_sec": 1723,
+      "mp3_url": "https://github.com/SchaeferAnjon/private-podcast/releases/download/ep001/ep001_football.mp3",
+      "mp3_bytes": 27577196,
+      "tts_voice": "male-qn-badao",
+      "tts_model": "speech-02-hd",
+      "published_at": "2026-04-20T20:00:00Z"
+    }
+  ]
+}
