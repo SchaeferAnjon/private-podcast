@@ -37,6 +37,20 @@
       "tts_voice": "male-qn-badao",
       "tts_model": "speech-02-hd",
       "published_at": "2026-04-20T20:00:00Z"
+    },
+    {
+      "num": 2,
+      "tag": "ep002",
+      "title": "共享内存架构：当多核同时操作一个账户时，到底会发生什么",
+      "summary": "为什么程序员明明写对了 deposit 函数，多线程跑起来余额还是会变 50？为什么 lock 加了好像没加？这一期我们从一个最熟悉的场景——银行账户——走进 Shared Memory 架构的核心：哪些写入对别的核可见、什么时候可见、以什么顺序可见。从 UMA 与 NUMA 的物理布局，到处理器、Cache、互连、内存这条电路上发生的事；从两个银行职员同时改一个账户的反例，到 Coherence 与 Consistency 的清晰分工——前者管同一个地址多份副本谁说了算，后者管不同地址写操作的可见顺序。再到那个让所有程序员第一次困惑的 SC vs PC 例子：为什么 dekker 算法在弱内存模型上会同时进入临界区？为什么现代 CPU 几乎都不是 SC 而是 TSO/PC？最后，把 lock、fence、acquire/release 这些 API 映射到 happens-before 的语义，告诉你它们到底在防什么、付了什么代价。两个主播的视角对话——不是上课，是一起把想当然拆开重组。",
+      "source": "海德堡大学 2026SS · Consistency and Coherence · Ch.02 Shared Memory Architectures",
+      "script_chars": 11000,
+      "duration_sec": 2140,
+      "mp3_url": "https://github.com/SchaeferAnjon/private-podcast/releases/download/ep002/ep002.mp3",
+      "mp3_bytes": 34239788,
+      "tts_voice": "audiobook_male_1+female-shaonv",
+      "tts_model": "speech-02-hd",
+      "published_at": "2026-04-25T18:42:44Z"
     }
   ]
 }
