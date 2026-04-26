@@ -51,6 +51,20 @@
       "tts_voice": "audiobook_male_1+female-shaonv",
       "tts_model": "speech-02-hd",
       "published_at": "2026-04-25T18:42:44Z"
+    },
+    {
+      "num": 3,
+      "tag": "ep003",
+      "title": "我与地坛 第二章 · 母亲走过的那些路",
+      "summary": "史铁生最深的一章。一个二十一岁瘫痪的儿子，用十五年的时间，在母亲去世之后，慢慢看懂她活过的样子。园中处处都有过我的车辙，有过我的车辙的地方也都有过母亲的脚印。",
+      "source": "史铁生《我与地坛》第二章，1990 年完稿，1991 年发表于《上海文学》",
+      "script_chars": 0,
+      "duration_sec": 2134,
+      "mp3_url": "https://github.com/SchaeferAnjon/private-podcast/releases/download/ep003/ep003.mp3",
+      "mp3_bytes": 34146476,
+      "tts_voice": "male-qn-badao",
+      "tts_model": "speech-02-hd",
+      "published_at": "2026-04-26T15:32:08Z"
     }
   ]
 }

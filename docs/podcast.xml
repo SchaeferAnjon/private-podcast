@@ -58,5 +58,20 @@
       <pubDate>Sat, 25 Apr 2026 18:42:44 +0000</pubDate>
       <enclosure url="https://github.com/SchaeferAnjon/private-podcast/releases/download/ep002/ep002.mp3" length="34239788" type="audio/mpeg"/>
     </item>
+  
+    <item>
+      <title>003 · 我与地坛 第二章 · 母亲走过的那些路</title>
+      <description><![CDATA[史铁生最深的一章。一个二十一岁瘫痪的儿子，用十五年的时间，在母亲去世之后，慢慢看懂她活过的样子。园中处处都有过我的车辙，有过我的车辙的地方也都有过母亲的脚印。]]></description>
+      <itunes:summary>史铁生最深的一章。一个二十一岁瘫痪的儿子，用十五年的时间，在母亲去世之后，慢慢看懂她活过的样子。园中处处都有过我的车辙，有过我的车辙的地方也都有过母亲的脚印。</itunes:summary>
+      <itunes:author>Schaefer</itunes:author>
+      <itunes:duration>35:34</itunes:duration>
+      <itunes:episode>3</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:image href="https://schaeferanjon.github.io/private-podcast/cover.jpg"/>
+      <guid isPermaLink="false">on-your-way-ep003</guid>
+      <pubDate>Sun, 26 Apr 2026 15:32:08 +0000</pubDate>
+      <enclosure url="https://github.com/SchaeferAnjon/private-podcast/releases/download/ep003/ep003.mp3" length="34146476" type="audio/mpeg"/>
+    </item>
   </channel>
 </rss>
